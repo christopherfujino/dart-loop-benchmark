@@ -38,6 +38,8 @@ int forLoop(List<List<int>> matrix) {
 You can execute the `test.sh` script, which will run `main.dart` both as JIT
 from source and then as an AOT-compiled application.
 
+The following are the results from being run on an x64 Linux system:
+
 ```
 $ ./test.sh
 Testing with JIT from source...
