@@ -2,27 +2,27 @@
 
 echo -e 'Testing with JIT from source...\n'
 dart ./main.dart
-echo
 
-echo -e 'Cleaning previous AOT build...\n'
-rm --force ./main_aot
-echo
+# Clean previous JIT snapshot
+rm --force ./main.jit
 
-echo -e 'Compiling AOT app...\n'
-dart2native ./main.dart -o main_aot
-echo
+echo -e 'Testing from JIT snapshot...\n'
+dart compile jit-snapshot ./main.dart -o main.jit
+
+# Clean previous AOT build
+rm --force ./main.aot
+
+# Compile fresh AOT build
+dart2native ./main.dart -o main.aot
 
 echo -e 'Testing with AOT app...\n'
 ./main_aot
-echo
 
-echo -e 'Cleaning previous dart2js build...\n'
-rm --force ./out.js*
-echo
+# Clean previous js build
+rm --force ./main.js*
 
-echo -e 'Compiling dart2js app...\n'
-dart2js ./main.dart
-echo
+# Compile JS app
+dart compile js ./main.dart -o main.js
 
 echo -e 'Testing with node.js...\n'
-node ./out.js
+node ./main.js

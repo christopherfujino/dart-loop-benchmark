@@ -12,7 +12,7 @@ int forEach(List<List<int>> matrix) {
 
 int forLoop(List<List<int>> matrix) {
   int sums = 0;
-  for(List<int> row in matrix) {
+  for (List<int> row in matrix) {
     for (int value in row) {
       sums += value;
     }
@@ -53,8 +53,8 @@ void main() {
   final forEachDuration = stopwatch.elapsed;
 
   stopwatch
-      ..reset()
-      ..start();
+    ..reset()
+    ..start();
   final forLoopSum = forLoop(matrix);
   stopwatch.stop();
   final forLoopDuration = stopwatch.elapsed;
@@ -65,6 +65,7 @@ void main() {
 
   print('forEach duration: ${forEachDuration}');
   print('for loop duration: ${forLoopDuration}');
-  print('The forEach took ${(forEachDuration.inMicroseconds /
-    forLoopDuration.inMicroseconds).toStringAsFixed(1)} times longer.');
+  print(
+      'The forEach took ${(forEachDuration.inMicroseconds / forLoopDuration.inMicroseconds).toStringAsFixed(1)} times as long as '
+      'for in.\n');
 }

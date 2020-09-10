@@ -1,2 +1,3 @@
-main_aot
-out.js*
+main.aot
+main.jit
+main.js*
