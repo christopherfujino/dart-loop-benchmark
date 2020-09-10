@@ -11,6 +11,28 @@ values. In an attempt to trick the compiler from over-optimizing such a trivial
 application, the matrix dimensions are generated "randomly", though from a
 constant seed value, so that results will be deterministic.
 
+```dart
+int forEach(List<List<int>> matrix) {
+  int sums = 0;
+  matrix.forEach((row) {
+    row.forEach((value) {
+      sums += value;
+    });
+  });
+  return sums;
+}
+
+int forLoop(List<List<int>> matrix) {
+  int sums = 0;
+  for(List<int> row in matrix) {
+    for (int value in row) {
+      sums += value;
+    }
+  }
+  return sums;
+}
+```
+
 ## Usage
 
 You can execute the `test.sh` script, which will run `main.dart` both as JIT
