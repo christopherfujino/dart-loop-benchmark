@@ -41,11 +41,12 @@ List<List<int>> generateMatrix(rand) {
 }
 
 void main() {
-  Stopwatch stopwatch = Stopwatch()..start();
+  Stopwatch stopwatch = Stopwatch();
   final rand = Random(SEED);
 
   // This takes time, but is not benchmarked
   final matrix = generateMatrix(rand);
+  stopwatch.start();
 
   final forEachSum = forEach(matrix);
   stopwatch.stop();
