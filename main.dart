@@ -27,11 +27,11 @@ const SEED = 12345;
 
 List<List<int>> generateMatrix(rand) {
   List<List<int>> matrix = <List<int>>[];
-  const dimension = 20000;
-  final x = rand.nextInt(dimension);
+  const dimensionLimit = 20000;
+  final x = rand.nextInt(dimensionLimit);
   for (int i = 0; i < x; i++) {
     final List<int> row = <int>[];
-    final y = rand.nextInt(dimension);
+    final y = rand.nextInt(dimensionLimit);
     for (int j = 0; j < y; j++) {
       row.add(rand.nextInt(999999));
     }

@@ -3,6 +3,14 @@
 A simple Dart app to benchmark the relative performance of iterating through a
 loop with `.forEach` versus using a `for (... in ...)` loop.
 
+## Implementation
+
+The code is essentially comparing the performance of visiting every element in a
+2-dimensional matrix (a nested list of lists of integers), summing the integer
+values. In an attempt to trick the compiler from over-optimizing such a trivial
+application, the matrix dimensions are generated "randomly", though from a
+constant seed value, so that results will be deterministic.
+
 ## Usage
 
 You can execute the `test.sh` script, which will run `main.dart` both as JIT
