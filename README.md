@@ -43,9 +43,9 @@ The following are the results from being run on an x64 Linux system:
 ```
 $ ./test.sh
 Testing with JIT from source...
-forEach duration: 0:00:04.655967
-for loop duration: 0:00:00.178140
-The forEach took 26.136561131694172 times longer.
+forEach duration: 0:00:05.785149
+for loop duration: 0:00:00.177996
+The forEach took 32.5 times longer.
 
 Cleaning previous AOT build...
 
@@ -53,7 +53,7 @@ Compiling AOT app...
 Generated: /home/chris/git/tmp/dart-loop-benchmark/main_aot
 
 Testing with AOT app...
-forEach duration: 0:00:05.368977
-for loop duration: 0:00:01.431956
-The forEach took 3.749400819578255 times longer.
+forEach duration: 0:00:05.294472
+for loop duration: 0:00:01.405688
+The forEach took 3.8 times longer.
 ```

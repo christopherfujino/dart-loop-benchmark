@@ -64,6 +64,6 @@ void main() {
 
   print('forEach duration: ${forEachDuration}');
   print('for loop duration: ${forLoopDuration}');
-  print('The forEach took ${forEachDuration.inMicroseconds /
-    forLoopDuration.inMicroseconds} times longer.');
+  print('The forEach took ${(forEachDuration.inMicroseconds /
+    forLoopDuration.inMicroseconds).toStringAsFixed(1)} times longer.');
 }
