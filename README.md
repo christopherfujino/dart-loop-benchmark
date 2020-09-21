@@ -44,28 +44,26 @@ The following are the results from being run on an x64 Linux system:
 $ ./test.sh
 Testing with JIT from source...
 
-forEach duration: 0:00:00.583692
-for loop duration: 0:00:00.175692
-The forEach took 3.3 times longer.
+forEach duration: 0:00:00.687409
+for loop duration: 0:00:00.196123
+The forEach took 350% as long as for loop.
 
 Testing from JIT snapshot...
 
 Compiling ./main.dart to jit-snapshot file main.jit.
-forEach duration: 0:00:00.825281
-for loop duration: 0:00:00.176557
-The forEach took 4.7 times longer.
+forEach duration: 0:00:00.618646
+for loop duration: 0:00:00.196801
+The forEach took 314% as long as for loop.
 
-Generated: /home/chris/git/tmp/dart-loop-benchmark/main.aot
 Testing with AOT app...
 
-forEach duration: 0:00:00.719786
-for loop duration: 0:00:01.391169
-The forEach took 0.5 times longer.
-Compiled 8,110,029 characters Dart to 107,473 characters JavaScript in 0.90 seconds
-Dart file ./main.dart compiled to JavaScript: main.js
+forEach duration: 0:00:00.955987
+for loop duration: 0:00:00.954359
+The forEach took 100% as long as for loop.
+
 Testing with node.js...
 
-forEach duration: 0:00:03.300000
-for loop duration: 0:00:01.030000
-The forEach took 3.2 times longer.
+forEach duration: 0:00:03.275000
+for loop duration: 0:00:01.559000
+The forEach took 210% as long as for loop.
 ```
