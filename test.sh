@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 echo -e 'Testing with JIT from source...\n'
 dart ./main.dart
 
@@ -13,16 +15,16 @@ dart compile jit-snapshot ./main.dart -o main.jit
 rm --force ./main.aot
 
 # Compile fresh AOT build
-dart2native ./main.dart -o main.aot
+dart2native ./main.dart -o main.aot > /dev/null
 
 echo -e 'Testing with AOT app...\n'
-./main_aot
+./main.aot
 
 # Clean previous js build
 rm --force ./main.js*
 
 # Compile JS app
-dart compile js ./main.dart -o main.js
+dart compile js ./main.dart -o main.js > /dev/null
 
 echo -e 'Testing with node.js...\n'
 node ./main.js
